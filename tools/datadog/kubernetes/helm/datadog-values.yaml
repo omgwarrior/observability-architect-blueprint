@@ -1,0 +1,15 @@
+# tools/datadog/kubernetes/helm/datadog-values.yaml
+datadog:
+  apiKey: "YOUR_DATADOG_API_KEY"
+  site: "datadoghq.com"
+  logs:
+    enabled: true
+    containerCollectAll: true
+  apm:
+    portEnabled: true
+  processAgent:
+    enabled: true
+clusterAgent:
+  enabled: true
+  metricsProvider:
+    enabled: true

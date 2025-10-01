@@ -1,0 +1,17 @@
+# tools/datadog/ansible/deploy_datadog_agent.yml
+---
+- name: Deploy Datadog Agent to Servers
+  hosts: all
+  become: yes
+
+  vars:
+    datadog_api_key: "YOUR_DATADOG_API_KEY"
+    datadog_site: "datadoghq.com"
+
+  tasks:
+    - name: Include the Datadog Agent role
+      include_role:
+        name: datadog.datadog
+      vars:
+        datadog_config:
+          logs_enabled: true
